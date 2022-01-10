@@ -1,6 +1,6 @@
 # 시그널스 소개
 
-## 소
+## 소개
 
 [Numerai Signals](https://signals.numer.ai/tournament) は、全世界の株式市場を対象としたコンペティションです。\
 収益の源泉となる指標を用いたSignalsを作成し、他の人のSignalsと比較してオリジナリティがどれだけ高いか比較することができます。\
