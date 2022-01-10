@@ -4,46 +4,35 @@ description: 공식규칙 및 시작 전 가이드
 
 # 토너먼트 소개
 
-## 토너먼 소개
+## 소개
 
-Numerai Tournamentとは、株式市場の動向を予測し、競争するプラットフォームです。\
-\
-参加者は難読化されたデータを使用して機械学習モデルを構築し、予測ファイルを提出することでTournamentに参加できます。\
-\
-また、提出した予測ファイルにNMRと呼ばれる暗号通貨を賭けると、パフォーマンスに基づいてNMRを獲得できます。\
-\
-Numeraiに提出された予測ファイルは、Numeraiが保有するヘッジファンドのモデル（メタモデル）を設計するために使用されます。下に示すyoutubeを見ることで、どのようにデータが使用されるか学べます。\
+Numerai (뉴머라이) 토너먼트란 주식시장의 동향을 예측을 통해 경쟁하는 플랫폼입니다. 참가자는 암호화된 데이터를 사용해 기계학습 모델을 구축한뒤 예측파일을 제출해서 토너먼트에 참가 할 수 있습니다.
 
+토너먼트에 제출 되는 예측파일에 Numeraire (NMR - 뉴머레어) 암호화폐를 걸면 퍼포먼스에 준하는 NMR을 획득할 수 있습니다. 뉴머라이에 제출 된 여러분들의 예측파일은 뉴머라이가 운용하는 헤지펀드의 모델(메타모델)을 설계하는데에 사용됩니다.
 
-[![](https://img.youtube.com/vi/dhJnt0N497c/0.jpg)](https://www.youtube.com/watch?v=dhJnt0N497c)\
+밑에 보이는 유튜브 영상을 보시면 어떤 형식으로 데이터가 사용되는지 알 수 있습니다.
 
+{% embed url="https://youtu.be/dhJnt0N497c" %}
 
-**概要**
+**개요**
 
-1.Numeraiに[登録](https://numer.ai)する。\
-2.トレーニングデータとサンプルスクリプトを含むデータセットをダウンロードする。\
-3.モデルを作成し、予測をNumeraiに送信する。\
-4.モデルにNMRを賭けて、パフォーマンスに基づいてNMRを貰う/払う\
-6.毎週の提出物を自動化する。\
+1. 뉴머라이에 등록 합니다.&#x20;
+2. 학습데이터와 샘플스크립트를 포함한 데이터셋을 다운로드 받습니다.&#x20;
+3. 모델을 작성하고 예측치를 뉴머라이에 제출합니다.&#x20;
+4. 모델에 NMR을 걸어 퍼포먼스에 따른 NMR을 획득하거나 상실하게 됩니다.
+5. 매주 예측파일 제출 절차를 자율화 할 수 있습니다.
 
+## 데이터
 
-### 데이터
+뉴머라이 토너먼트에 참여하시면 무료로 고퀄리티 금융 데이터셋을 사용할 수 있습니다. 데이터셋은 정화 후 정규화와 암호화 된 고퀄리티의 재무데이터로 구성 되어 있습니다.
 
-Numerai Tournamentの中核は無料のデータセットが使用できることです。データセットはクリーンアップ・正規化・難読化された高品質の財務データで構成されています。\
-![numerai\_training\_data.csv](<../.gitbook/assets/image (7).png>)
+![](../.gitbook/assets/data.png)
 
-提供されている`training_data`では、各`id`は難読化された`features`のセットを持つ株式に対応しています。\
-`target`は将来のパフォーマンスを表します。行は、異なる時点を表す`eras`にグループ化されています。\
-詳細は[本記事](https://qiita.com/tit\_BTCQASH/items/366a2d1c273507dd4b8c)に詳しく記述されています。\
+제출되는 학습 데이터는 각 id는 암호화 되어 있는 feature set (특징셋)을 주식의 target(타겟)은 4주후 미래의 퍼포먼스를 나타냅니다. <mark style="color:red;background-color:red;">\[다른 시점을 나타내는 eras 로 그룹화 되어있습니다.]</mark>
 
+## 기계학습 모델링
 
-### &#x20;기계학습 모델링
-
-Numerai Tournamentでは、過去のデータを用いて予測モデルを作成し、そのモデルを用いて将来の株式市場を予測することが目的です。\
-\
-PythonでXGBoostを使用した基本的な例を次に示します。\
-過去のトレーニングデータを使用してモデルをトレーニングし、ライブTournamentデータで予測を行います。\
-（＊本プログラムのみでは予測ファイルの提出ができません。より実践的な例は[本記事](https://qiita.com/tit\_BTCQASH/items/366a2d1c273507dd4b8c)をチェックしてください。
+토너먼트 안에서 여러분들의 목표는 과거의 데이터를 통해 예측 모델을 작성하고 해당 모델을 사용하여 미래 주식시장을 예측하는 것이 목적입니다. 과거의 학습 데이터를 사용하여 모델을 학습시키고 라이브 토너먼트 데이터를 예측합니다. 파이썬의 XGBoost를 사용한 기본적인 예를 밑에 보시기 바랍니다.&#x20;
 
 ```python
 import pandas as pd
@@ -66,14 +55,17 @@ predictions = model.predict(tournament_data[feature_names])
 predictions.to_csv("predictions.csv")
 ```
 
-### 예측파일 제출
+파이썬이 아니라도 참가자분들은 개개인 좋아하시는 프로그래밍언어를 자유롭게 사용하실 수 있습니다.
 
-毎週土曜日の`18:00 UTC`(日本時間では日曜日`03:00 JST`) に新しいラウンドが始まり、新しいTournamentデータが公開されます。Tournamentデータを用いて予測値の入ったファイルを作成し、Numeraiに提出しましょう！\
+## 예측파일 제출
 
+매주 `토요일 18:00 UTC (한국시간 일요일 03:00 KST)`에 새로운 라운드가 시작되며 새로운 토너먼트 데이터가 공개됩니다. 새 라운드에 참여하시려면 그 라운드의 연관된 데이터셋를 사용하셔서 예측값이 들어간 파일을 생성하고 뉴머라이에 제출하시면 됩니다.
 
-締め切りは月曜日`14:30 UTC` (日本時間では月曜日`23:30 JST`) です。提出が遅れた場合、ペイアウトの対象外となります。\
-[Numerapi](https://github.com/uuazed/numerapi) や[Rnumerai](https://github.com/Omni-Analytics-Group/Rnumerai)GraphQL [API](https://api-tournament.numer.ai) を使用することもできます。\
-以下は、コードの例です。
+![](../.gitbook/assets/data\_release.png)
+
+마감시간은 매주 `월요일 14:30 UTC (한국시간 월요일 23:30 KST)`입니다. 제출이 늦어질 경우 토너먼트 참여에서 제외됩니다.
+
+[Numerapi](https://github.com/uuazed/numerapi) (파이썬)나 [Rnumerai](https://github.com/Omni-Analytics-Group/Rnumerai) (R)또는 [GraphQL API](https://api-tournament.numer.ai)를 사용해서 제출을 수동화 할 수 도 있습니다. 다음은 코드의 예입니다.
 
 ```python
 import numerapi
@@ -86,8 +78,7 @@ napi.download_current_dataset(unzip=True)
 napi.upload_predictions("predictions.csv", model_id="model_id")
 ```
 
-また、[Numerai-cli](https://github.com/numerai/numerai-cli) を用いて毎週の予測ファイル提出を自動化することもできます。\
-
+또는 [Numerai Compute](https://github.com/numerai/numerai-cli) 툴을 이용해 매주 예측 파일 제출을 자동화 할 수도 있습니다.
 
 ```python
 # setup your cloud infrastructure
@@ -100,26 +91,21 @@ numerai docker copy-example
 numerai docker deploy
 ```
 
-![prediction.csv](../.gitbook/assets/image.png)
+## 모델 진단
 
-### 모델 성능에 대한 진단
-
-モデルパフォーマンスは`DIAGNOSTICS`に示される指標を用いて診断することができます。過去のデータから提出した予測ファイルのパフォーマンス・リスクを評価する指標が表示されます。\
-\
-
+모델의 성능은 Diagnostics 기능을 이용하셔서 진단할 수 있습니다. 과거의 데이터에서 제출한 예측파일의 성능과 리스크를 측정해 주는 기능입니다.
 
 {% hint style="info" %}
-この評価ツールを繰り返し使用すると、すぐにオーバーフィットします。本ツールは、最終チェックとして使用するのが望ましいです。\
-
+**이 진단 툴을 반복적으로 사용하시면 바로 과적합화 될 수 있습니다. 본 툴은 최종 확인용으로 사용하는 것이 좋습니다.**
 {% endhint %}
 
-詳細についてはこの[フォーラム投稿](https://forum.numer.ai/t/model-diagnostics-update/902)を読んでください。\
-![prediction.csv](../.gitbook/assets/DIAGNOSTICS.png)
+![](../.gitbook/assets/diagnostics.gif)
 
-### 모델의 평가방법
+**더 자세한 내용은** [**이 게시판에 글**](https://forum.numer.ai/t/model-diagnostics-update/902)**을 참고해 주세요.** 이 진단 툴을 반복적으로 사용하시면 바로 과적합화 될 수 있습니다. 본 툴은 최종 확인용으로 사용하는 것이 좋습니다.
 
-あなたが提出した予測結果は、あなたの予測と真のターゲットの `correlation` (ここではspearmanの順位相関)でスコアリングされます。相関性が高いほど高いペイアウトを得られます。\
+## 모델의 평가방법
 
+あなたが提出した予測結果は、あなたの予測と真のターゲットの `correlation` (ここではspearmanの順位相関)でスコアリングされます。相関性が高いほど高いペイアウトを得られます。\\
 
 {% tabs %}
 {% tab title="scoring:function.py" %}
@@ -157,25 +143,22 @@ NumeraiにNMRをステーキングする場合、Numeraiはシビル耐性のあ
 \
 もちろん、NMRをステークせずにNumeraiに参加することもできます。\
 例えば、Tournamentの詳細や自分のモデルの性能を知るために、NMRをステークしないのは良いテストとなるでしょう。\
-自分のモデルに自信が持てるようになったら、そのモデルにステークすることができます。ステークの最小値は3NMRです。\
+自分のモデルに自信が持てるようになったら、そのモデルにステークすることができます。ステークの最小値は3NMRです。\\
 
-
-
-
-### 스테이킹 금액변경
+## 스테이킹 금액변경
 
 Numeraiのウェブサイトでは、「Manage Stake」をクリックしてステーク量を管理できます。このモーダルを使用すれば、NMRのステーク量を増減したり、`Corr`、`Corr+1/2MMC`、`Corr+MMC`、`Corr+2MMC`にベットできます。\
 \
 ステーキングとは、NMRをイーサリアムブロックチェーンのスマートコントラクトに固定することを意味します。ステーク中はNumeraiがロックアップされたNMRを増減させる権利を保有します。\
 \
-![](<../.gitbook/assets/image (18).png>)
+![](../.gitbook/assets/image%20\(18\).png)
 
 NMRのステーク量を増やすと、あなたのウォレットからNMRが引き出され、Numeraiの保有しているアカウントにNMRが移送されます。\
 NMRのステーク量を減らすと、Numeraiの保有しているアカウントからNMRが移送され、あなたのウォレットに入金されます。
 
 ステーク量への変更はすぐに適用されるのではなく、約4週間後に反映されます。これは、Tournamentの終了期間が4週間であることに起因します。
 
-### 페이아웃
+## 페이아웃
 
 どれだけのNMRを得られるかはNMRのステーク量と、Corr,MMCの値に依存します。\
 \
@@ -202,39 +185,27 @@ mmc\_multiplier:0,0.5,1,2の中で一つ選べる。\
 最初の2つの例は、`corr_multiplier`の影響を示しています。\
 3番目の例は、負のスコアがペイアウトに影響を与えるかを示しています。\
 4番目の例は、ペイアウトがステーク量の±25％に制限されていることを示しています。\
-\
-
+\\
 
 スコアは毎日更新されますが、ペイアウトはTournamentの終了日（日本時間の木曜日）にのみ行われます。参加者の一人が作成したNumeraiPayoutsアプリを使用すると、毎日の変化を追跡できます。\
 \
-ステークを開始すると、最初の4ラウンドの間ステーク値は一定に保たれます。その後、4週間前のラウンドの支払いに基づいて、ステーク値が毎週更新されます。\
-
+ステークを開始すると、最初の4ラウンドの間ステーク値は一定に保たれます。その後、4週間前のラウンドの支払いに基づいて、ステーク値が毎週更新されます。\\
 
 ![](../.gitbook/assets/payout\_week.png)
 
-提出した予測ファイルがプラスのCorr、MMCを持ち続ける限り、得られたNMRの量は増大します。モデルが52週間、毎週同じ正のスコアを取得すると仮定した場合の支払い予測の例を下図に示します。\
-
+提出した予測ファイルがプラスのCorr、MMCを持ち続ける限り、得られたNMRの量は増大します。モデルが52週間、毎週同じ正のスコアを取得すると仮定した場合の支払い予測の例を下図に示します。\\
 
 ![](../.gitbook/assets/payout\_predict.png)
 
-### 남용방지
-
-Numeraiは、積極的にペイアウトルールを悪用している、または悪用していると判断した場合には、賭け金を払い戻し、すべての得られたNMRを無効化にする権利を保有します。
-
-Numeraiの支払いシステムは攻撃に強いように設計されています。ユーザーが罰を恐れずに新しいアイデアを試してもらいたいため、この権利を行使することはめったにありません。
-
-悪質な攻撃を発見した場合には、そのことをコミュニティに伝えてください。以前あった攻撃の一つが[こちら](https://forum.numer.ai/t/leaderboard-bonus-exploit-uncovered/200/8)で紹介されています。
-
-### 리더보드 / 순위표&#x20;
+## 리더보드 / 순위표
 
 NMRのペイアウトはラウンドごとのパフォーマンスに左右されます。リーダーボードに掲載される評価や順位は20ラウンド分のCorr,MMCの加重平均値を用いています。\
-詳しくは、 [Reputation](https://jp.docs.numer.ai/numerai-tournament/reputation) のセクションを参照してください。\
+詳しくは、 [Reputation](https://jp.docs.numer.ai/numerai-tournament/reputation) のセクションを参照してください。\\
 
+![](../.gitbook/assets/image%20\(5\).png)
 
-![](<../.gitbook/assets/image (5).png>)
+## 도움요청
 
-### 서포트 / 지원
+질문과 피드벡이 필요하시면 [RocketChat](https://community.numer.ai/home) 또는 뉴머라이 공식 계시판에
 
-질문과 피드벡이 필요하시면 [RocketChat](https://community.numer.ai/home) 또는 뉴머라이 공식 계시판에&#x20;
-
-문희해   ㅁㅇadfadfadfadfaadfdafdafdafdlkadfd  、サポート、フィードバックは [RocketChat](https://community.numer.ai/home) にお願いします!\
+문희해 ㅁㅇadfadfadfadfaadfdafdafdafdlkadfd 、サポート、フィードバックは [RocketChat](https://community.numer.ai/home) にお願いします!\\
