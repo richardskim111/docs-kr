@@ -206,6 +206,6 @@ NMRのペイアウトはラウンドごとのパフォーマンスに左右さ�
 
 ## 도움요청
 
-질문과 피드벡이 필요하시면 [RocketChat](https://community.numer.ai/home) 또는 뉴머라이 공식 계시판에
+도움이 필요하신가요?
 
-문희해 ㅁㅇadfadfadfadfaadfdafdafdafdlkadfd 、サポート、フィードバックは [RocketChat](https://community.numer.ai/home) にお願いします!\\
+질문과 피드백은 [RocketChat](https://community.numer.ai/home) (영어) 또는 [Discord](https://discord.gg/TxNzq3Nrcc) (한국어)에 올려 주시기 바랍니다!

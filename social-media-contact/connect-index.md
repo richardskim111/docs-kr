@@ -1,12 +1,9 @@
-# 連絡先一覧
+# 연락처와 소셜미디어
 
-* [RocketChat](https://community.numer.ai/) Numerai公式が運営する英語版のチャットルーム
-* [Slack](https://t.co/a9i06PrSsN?amp=1) 有志が運営する日本語版のチャットルーム
-* [Forum](https://forum.numer.ai) NumeraiやSignalsについて議論するスペース。
-* [Twitter](https://twitter.com/numerai) Numerai公式が運営するTwitter アカウント
-* [Medium](https://medium.com/numerai) Numerai公式が運営するblog
-* [r/numerai](https://www.reddit.com/r/numerai/) Numerai公式が運営するSubreddit
-* email: support@numer.ai
-
-
-
+* [RocketChat](https://community.numer.ai) - 뉴머라이 공식운영 채팅방 (영어)&#x20;
+* [Discord](https://discord.gg/TxNzq3Nrcc) - 한국어 비공식 채팅방&#x20;
+* [Forum](https://forum.numer.ai) - 토너먼트와 시그널스 게시판 (영어)&#x20;
+* [Twitter](https://twitter.com/numerai) - 뉴머라이 공식 트위터 계정&#x20;
+* [Medium](https://medium.com/numerai) - 뉴머라이 공식 블로그 (영어)&#x20;
+* [r/numerai](https://www.reddit.com/r/numerai/) - 뉴머라이 공식 Subreddit (영어)
+* email: [support@numer.ai](mailto:support@numer.ai)
