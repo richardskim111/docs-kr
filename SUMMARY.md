@@ -20,6 +20,6 @@
 * [신규 참가자들을 위한 팁](numerai-signals/new-users.md)
 * [시그널스에 관한 FAQ](numerai-signals/faq.md)
 
-## 소셜 미디어와 열락처 <a href="#social-media-contact" id="social-media-contact"></a>
+## 연락처와 소셜미디어 <a href="#social-media-contact" id="social-media-contact"></a>
 
 * [연락처와 소셜미디어](social-media-contact/connect-index.md)
