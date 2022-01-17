@@ -1,32 +1,35 @@
-# 프로그램 툴과 라이브러리
+# 툴과 라이브러리
 
 ### 샘플 스크립트
 
-[Numerai Tournament用のサンプルスクリプト](https://github.com/numerai/example-scripts)\
-こちらは、Numeraiのデータをダウンロードした際に含まれる機械学習スクリプトの例です。\
-[Numerai Tournamentファイルのデータ分析と情報](https://github.com/numerai/example-scripts/blob/master/analysis\_and\_tips.ipynb)\
-Tournamentファイルのデータがどのような傾向を示しているか分析するツールです。特徴量の作成や機械学習モデルの作成に役立つかもしれません。\
-[その他のツール](https://docs.numer.ai/tournament/tools)\
-英語版のツールに関するリンク集です。
+{% embed url="https://github.com/numerai/example-scripts" %}
 
 ### API 클라이언트
 
-[Numerapi](https://github.com/uuazed/numerapi)\
-本ライブラリは、Numerai APIへのPythonクライアントです。インターフェースはPythonでプログラムされており、トレーニングデータのダウンロード、予測値のアップロード、ユーザー、submission、competition情報へのアクセスが可能です。\
-これは、メインcompetitionと新しいNumerai Signals competitionの両方で動作します。\
-[RNumerai](https://github.com/Omni-Analytics-Group/Rnumerai)\
-本インターフェースは、Tournamentデータのダウンロード、予測の提出、ユーザー情報の取得、NMRの預け入れなどを行うことができます。\
-R言語を用いて関数を使用すると、参加者はNumerai Tournamentに関連する全ての手続きを自動化することができます。\
+{% embed url="https://github.com/uuazed/numerapi" %}
 
+{% embed url="https://github.com/Omni-Analytics-Group/Rnumerai" %}
 
-### 파이선&#x20;
+{% embed url="https://github.com/uuazed/numerapi-scala" %}
 
-[Numerai-cli](https://docs.numer.ai/tournament/compute)\
-クラウド上で完全自動化された予測ファイルの提出ワークフローを1ドル/月未満でできるツールです。\
-[Numerauto](https://github.com/thebrain85/numerauto)\
-Numerai Tournamentに自動的に参加できるPythonデーモンです。
+### 파이선
 
-뮤니티  ㅣ;
+{% embed url="https://github.com/numerai/numerai-cli" %}
 
-### 커뮤니티 계발 계기판
+### 커뮤니티 계발 대시보드
 
+Numerai Insights는 [james.g9](https://numer.ai/fuka\_eri)에 의해 모델, 보류 중인 지급액 및 전체 모델 수집 성능을 나란히 비교할 수 있도록 설계된 애플리케이션입니다.
+
+{% embed url="https://www.numerai-insights.com" %}
+
+[Bouwe Ceunen](https://twitter.com/BouweCeunen)의 [Numerai Payouts](https://twitter.com/NumeraiPayouts)는 대시보드로 이용하거나 iOS 및 Android용 앱을 다운로드할 수 있습니다.
+
+{% embed url="https://dashboard.numeraipayouts.com" %}
+
+{% embed url="https://apps.apple.com/app/id1522158691" %}
+
+{% embed url="https://play.google.com/store/apps/details?id=app.numeraipayouts.numerai_payouts" %}
+
+[Jo-fai Chow](https://twitter.com/matlabulous)님의 Numerati Dashboard
+
+{% embed url="https://www.jofaichow.co.uk/numerati" %}
