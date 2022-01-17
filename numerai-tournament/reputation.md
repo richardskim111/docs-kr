@@ -14,6 +14,16 @@ NMR의 페이아웃은 1회의 라운드에서의 퍼포먼스에 좌우됩니�
 
 아래에 가중평균을 계산하는 코드를 볼 수 있습니다.
 
+{% tabs %}
+{% tab title="Python" %}
+Python
+{% endtab %}
+
+{% tab title="Julia" %}
+Julia
+{% endtab %}
+{% endtabs %}
+
 ```python
 # delta is the difference between the current and target round number
 def round_weight(delta, day):
