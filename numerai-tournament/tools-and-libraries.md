@@ -12,7 +12,7 @@
 
 {% embed url="https://github.com/uuazed/numerapi-scala" %}
 
-### 파이선
+### 파이&#x20;
 
 {% embed url="https://github.com/numerai/numerai-cli" %}
 
