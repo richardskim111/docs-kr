@@ -78,43 +78,34 @@
 
 검증기간을 포함한 예측결과에는 `friday_date`, `data_type`열을 포함해야 합니다.
 
-* **`friday_date` 열 - 뉴머라이 시그널스에서는 라운드의 시작이 금요일이기 때문에 금요일에 해당하는 날짜를 쓰셔야 합니다.**
+* `friday_date` 열 - 뉴머라이 시그널스에서는 라운드의 시작이 금요일이기 때문에 금요일에 해당하는 날짜를 쓰셔야 합니다.
 * `data_type` 열 - 값은 `live` 또는 `validation`만을 취할 수 있습니다. `data_type`이 `live`인 행에는 가장 최근 금요일 날짜가 포함되어 있어야 합니다.
 
-2列のみの予測結果は、現在の`live`時間帯に対応していると仮定します。\\
+![](<../.gitbook/assets/signals (1).png>)
 
-また、Signalsを提出すると過去のパフォーマンス、リスク、潜在的な収益に関する診断もできます。検証期間は`20130104`から`20200228`までの374週間です。\\
-
-検証期間を含む予測結果には、friday\_date,data\_type列を含める必要があります。
-
-* `friday_date` 列 - Numerai Signals では、コンペティションの開始が金曜日なので、金曜日に相当する日付をいれる必要があります。
-* `data_type` 列 - 値は`live`または`validation`のみを取り得ます。`data_type`が`live`の行には、直近の金曜日の日付が含まれていなければなりません。
-
-![](../.gitbook/assets/image%20\(8\).png)
-
-最新の提出例は[こちら](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/example\_signal/latest.csv)からダウンロードできます。
+최신의 제출예는 [이 링크](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/example\_signal/latest.csv)를 통해 다운로드 할 수 있습니다.
 
 ### **시그 진단**
 
-Signalsを提出すると、過去のパフォーマンス、リスク、潜在的な収益の診断ができます。これは通常、提出物に含まれている週数やティッカー数に応じて10～15分程度かかります。\\
+시그널 데이터를 제출하면 과거의 성능, 리스크, 잠재적인 수익을 진단할 수 있습니다. 이 절차는 보통 제출파일에 포함되어 있는 주 수와 티커 수에 따라 10\~15분 정도 소요됩니다.
 
-![An example diagnostics report](../.gitbook/assets/image%20\(10\).png)
+![An example diagnostic report](../.gitbook/assets/signal\_diagnostics.png)
 
-これらの診断を用いると、NMRをステークする価値があるかを評価できます。ただし、過去の検証期間中に高いパフォーマンスが出たSignalsは、現在または将来のライブ期間で良いスコアが得られない可能性があることに注意すべきです。\\
+이러한 진단을 이용하면 NMR을 스테이킹 할 가치가 있는지를 평가할 수 있습니다. 단 과거의 검증기간 중에 높은 퍼포먼스가 나온 시그널은 현재 또는 미래의 라운드에서 좋은 점수를 얻지 못할 수 있다는 점에 주의해야 합니다.
 
 {% hint style="danger" %}
-この診断ツールを繰り返し使用すると、すぐにオーバーフィッティングにつながります。診断は、Signals作成プロセスの最終チェックとしてのみ使用してください。
+이 진단 툴을 반복적으로 사용하면 바로 overfitting(과적합)으로 연결됩니다. 진단 툴은 시그널 데이터 작성 과정에 최종 점검으로만 사용하는걸 추천합니다.
 {% endhint %}
 
-診断の計算に使用した過去のターゲットはすべて[ここ](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/signals\_train\_val\_bbg.csv)にあります。
+진단을 계산할 때 사용한 과거의 타겟은 모두 [이 파일](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/signals\_train\_val\_bbg.csv)에서 찾을 수 있습니다.
 
 ### **제출 자동화**
 
 {% hint style="info" %}
-最新のSignalsを毎週Numeraiに提出する必要があります。
+최신 시그널 데이터를 매주 뉴머라이에 제출해야 합니다.
 {% endhint %}
 
-[Numerai-CLI](https://github.com/numerai/numerai-cli)、[GraphQL API ](https://api-tournament.numer.ai)、公式 python クライアントを使用することで、投稿ワークフローを自動化することができます。
+[Numerai-CLI](https://docs.numer.ai/tournament/compute), [GraphQL API](https://api-tournament.numer.ai), 공식 python 클라이언트를 사용하여 제출 절차를 자율화할 수 있습니다.
 
 {% embed url="https://github.com/uuazed/numerapi#usage-example---numerai-signals" %}
 
