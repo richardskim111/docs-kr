@@ -254,7 +254,7 @@ payout = stake_value * payout_factor * (corr * corr_multiplier + mmc * mmc_multi
 
 시그널스에는 두 가지 날짜가 있습니다.
 
-* **data\_date - 주식 시장 데이터에 대응하는 날짜입니다. 모든 data\_date는 그날의 시장 종가를 참고하며 시간은 포함되어 있지 않습니다. 예를 들어 submissions의 friday\_date열의 값은 data\_date형입니다.**
+* `data_date` - 주식 시장 데이터에 대응하는 날짜입니다. 모든 `data_date`는 그날의 시장 종가를 참고하며 시간은 포함되어 있지 않습니다. 예를 들어 **제출파일**의 `friday_date`열의 값은 `data_date`형입니다.
 * **effective\_date - 시그널스에서 진행되는 액션 및 이벤트를 지원하는 날짜로 항상 UTC에서 지정된 시간을 포함할 수 있습니다. 시간대 및 주식시장 데이터 처리에 시간이 걸리기 때문에 data\_date와 effective\_date 사이에는 보통 지연이 발생합니다. 특별한 지정이 없는 한 본 웹사이트 및 본 문서에 기재되어 있는 날짜는 모두 effective\_date형입니다.**
 
 ### 라운드
