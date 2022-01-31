@@ -215,15 +215,13 @@ payout = stake_value * payout_factor * (corr * corr_multiplier + mmc * mmc_multi
 
 ![](../.gitbook/assets/signals\_payout\_factor.png)
 
-`corr`: 제출한 시그널데이**제출한 시그널 데이터와 뉴머라이 타겟의 상관계수** 와 타겟의 상관계수
+`corr`: 제출한 시그널과 뉴머라이 타겟의 상관계수
 
-corr\_multiplier: 현재는 2.0x 이외는 선택할 수 없습니다
+`corr_multiplier`: 현재는 2.0x 이외는 선택할 수 없습니다
 
-corr\_multiplier:現在は2のみ
+`mmc`: 제출한 시그널과 메타모델과의 상관계수
 
-mmc: 제출한 예측치와 메타모델과의 상관계수
-
-mmc\_multiplier: 현재 0.5x, 1.0x, 2.0x, 3.0x 중 하나를 선택할 수 있습니다.
+`mmc_multiplier`: 현재 0.5x, 1.0x, 2.0x, 3.0x 중 하나를 선택할 수 있습니다.
 
 | corr multiplier options | mmc multiplier options       |
 | ----------------------- | ---------------------------- |
@@ -256,8 +254,8 @@ mmc\_multiplier: 현재 0.5x, 1.0x, 2.0x, 3.0x 중 하나를 선택할 수 있�
 
 시그널스에는 두 가지 날짜가 있습니다.
 
-* `data_date` **** - 기초가 되는 주식 시장 데이터에 대응하는 날짜입니다. すべての`data_date`は、その日の市場の終値を参照しており、時刻は含まれていません。例えば、submissionsの`friday_date`列の値は`data_date`型です。
-* `effective_date`- Numerai Signals で行われるアクションやイベントに対応する日付で、常にUTCで指定された時間を含む場合があります。時間帯や株式市場データの処理に時間がかかるため、`data_date`と`effective_date`の間には通常遅延が発生します。特に指定がない限り、本ウェブサイトおよび本文書に記載されている日付はすべて effective\_date 型です。
+* **data\_date - 주식 시장 데이터에 대응하는 날짜입니다. 모든 data\_date는 그날의 시장 종가를 참고하며 시간은 포함되어 있지 않습니다. 예를 들어 submissions의 friday\_date열의 값은 data\_date형입니다.**
+* **effective\_date - 시그널스에서 진행되는 액션 및 이벤트를 지원하는 날짜로 항상 UTC에서 지정된 시간을 포함할 수 있습니다. 시간대 및 주식시장 데이터 처리에 시간이 걸리기 때문에 data\_date와 effective\_date 사이에는 보통 지연이 발생합니다. 특별한 지정이 없는 한 본 웹사이트 및 본 문서에 기재되어 있는 날짜는 모두 effective\_date형입니다.**
 
 ### 라운드
 
