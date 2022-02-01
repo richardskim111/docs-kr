@@ -28,7 +28,7 @@ Numerai (뉴머라이) 토너먼트란 주식시장의 동향을 예측을 통�
 
 ![](../.gitbook/assets/data.png)
 
-제출되는 학습 데이터는 각 id는 암호화 되어 있는 feature set (특징셋)을 주식의 target(타겟)은 4주후 미래의 퍼포먼스를 나타냅니다. <mark style="color:red;background-color:red;">\[다른 시점을 나타내는 eras 로 그룹화 되어있습니다.]</mark>
+각 `id` 는 `era` (특정 기간)의 의 주식을 표시합니다. `features` (특성셋)들은 그 당시에 주식의 다양한 속성들을 표시합니다. `target` (타겟)은 향후 4주 후의 주식의 추상적인 퍼포먼스를 표시합니다.
 
 ## 기계학습 모델링
 
