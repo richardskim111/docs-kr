@@ -9,9 +9,37 @@
 
 ## 튜토리얼과 노트북
 
-의 Numerai 노트북 https://numer.ai/notebook
+뉴머라이 공식 예시 노트북
+
+{% embed url="https://numer.ai/notebook" %}
+
+[tit\_btcqash](https://twitter.com/tit\_BTCQASH)님의 웹 사이트 기능 소개 및 뉴머라이 대한 전면적인 가이드
+
+{% embed url="https://tit-btcqash.medium.com/a-comprehensive-guide-to-competing-at-numerai-70b356edbe07" %}
+
+[OmniAnalytics](https://twitter.com/OmniAnalytics)님의 새로운 참가자들을 위한 기본 그래프 및 시각화와 탐색적 데이터 분석
+
+{% embed url="https://forum.numer.ai/t/performing-exploratory-data-analysis-on-numerai-tournament-data-with-r/1199" %}
+
+[SurajP](https://numer.ai/surajp)님의 Google Colab을 통해 읽기 쉬운 튜토리얼
+
+{% embed url="https://towardsdatascience.com/a-guide-to-the-hardest-data-science-tournament-on-the-planet-748f46e83690" %}
+
+[perfect\_fit](https://numer.ai/perfect\_fit)님의 Kaggle Kernel을 사용한 튜토리얼
+
+{% embed url="https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai?scriptVersionId=47253779" %}
+
+Katsu1110님의 MLP를 사용한 데이터에 학습 절차의 Kaggle Kernel 튜토리얼
+
+{% embed url="https://www.kaggle.com/code1110/numerai-mlp-with-kerastuner-starter?scriptVersionId=52496687" %}
+
+
+
+{% embed url="https://youtu.be/8Heck3JAyAw?list=PLz3D6SeXhT3v39noGoGEDFMfhZsa1P9Qz" %}
 
 ## 예시 스크립트 및 도구
+
+{% embed url="https://github.com/numerai/example-scripts" %}
 
 {% content-ref url="tools-and-libraries.md" %}
 [tools-and-libraries.md](tools-and-libraries.md)
