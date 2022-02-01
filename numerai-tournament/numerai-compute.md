@@ -63,4 +63,4 @@ numerai upgrade
 
 단계별 [튜토리얼](https://docs.numer.ai/help/compute-tutorial)을 읽으시거나 [유튜브 비디오](https://youtu.be/-3y0N7fqfOI)를 시청하시기 바랍니다.
 
-더 자세한 도움이 필요하시면 [RocketChat](https://community.numer.ai)에 [#Compute](https://community.numer.ai/channel/compute) 채널 또는 [Slack](https://numerai-kr.slack.com/join/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw#/shared-invite/email) (한국어)에 에 도움을 요청하시기 바랍니다.
+더 자세한 도움이 필요하시면 [RocketChat](https://community.numer.ai)에 [#Compute](https://community.numer.ai/channel/compute) 채널 또는 [Discord](https://discord.gg/WkRnr4JXW2)(한국어)에 에 도움을 요청하시기 바랍니다.
