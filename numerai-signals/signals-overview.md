@@ -281,4 +281,4 @@ NMR의 페이아웃은 라운드마다의 퍼포먼스에 좌우됩니다. 리�
 
 도움이 필요하신가요?&#x20;
 
-질문과 피드백은 [RocketChat](https://community.numer.ai/home) (영어) 또는 [Discord](https://discord.gg/TxNzq3Nrcc) (한국어)에 올려 주시기 바랍니다!
+질문과 피드백은 [RocketChat](https://community.numer.ai/home) (영어) 또는 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw) (한국어)에 올려 주시기 바랍니다!
