@@ -45,6 +45,8 @@
 [tools-and-libraries.md](tools-and-libraries.md)
 {% endcontent-ref %}
 
-## 도도움요청
+## **도움요청**
 
-1. &#x20;뉴머라이와 커뮤니티에 관련된 편리한 링크 RocketChat #newUsers 채널 참여로 더 많은 힌트나 지원을 얻을 수 있습니다. Discord 서버에서는 참가자들과 한국어로 대화를 나눌 수 있습니다. 데이터 분석, 힌트, 튜토리얼 관련 게시물은 뉴머라이 게시판을 체크해 주세요.
+도움이 필요하신가요?&#x20;
+
+질문과 피드백은 [RocketChat](https://community.numer.ai/channel/newusers) (영어) 또는 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw) (한국어)에 올려 주시기 바랍니다!

@@ -2,15 +2,19 @@
 description: この記事は、tit_BTCQASHのqiita記事に従います。元記事そのままなので、そっちを読んだ方が良いかもしれません。
 ---
 
-# 予測ファイルの自動提出
+# Numerai-CLI와 Compute
 
-Numerai－CLIは予測ファイルの提出を自動化できるフレームワークです。Numerai CLI 0.1または0.2を使用している場合は、以下のアップグレードガイドに必ず従ってください。\
+## 소개
 
+numerai-cli (명령 줄 인터페이스)는 고유의 뉴머라이 Compute 클러스터를 만들고 예측 노드를 클러스터에 배치하여 매주 제출 워크플로우를 자동화하는 데 도움이 되는 명령줄 툴 입니다. 기계학습 모델의 시스템 리소스를 클라우드에서 프로비저닝하여 매주 자동으로 제출할 수 있으므로 예측파일이가 늦게 제출될 염려를 없앴 수 있는 도움을 주는 툴 입니다.
 
-[numerai-cli](https://github.com/numerai/numerai-cli) は毎週の予測ファイル提出を自動化するのに役立つコマンドラインツールです。本ツールを使用することで、提出期限に遅れることなく予測ファイルを自動で提出できます。\
-![](../.gitbook/assets/architecture\_prediction\_network.png)
+![Prediction Nodes in the Numerai Network](../.gitbook/assets/numerai\_compute.png)
 
-## 始め方
+numerai-cli를 사용하여 고유한 클라우드 인프라를 프로비저닝하고 뉴머라이가 트리거할 수 있는 예측 노드로 사전 훈련된 모델을 배포한뒤 새 토너먼트 데이터를 다운로드, 추론을 실행하고 예측 파일을 뉴머라이에 업로드하게 할 수 있습니다.
+
+## 시작 방법
+
+numerai-cli를 사용하려면 Docker, Python3, Numerai API Key, AWS API Key 등 네가지의 요소들이 필요합니다. 이 네가지 요소를 갖추고 있다면 바로 시작할 수 있습니다.
 
 ```
 pip3 install numerai-cli
@@ -34,267 +38,29 @@ numerai compute test-webhook
 numerai compute logs -f
 ```
 
-## 自動投稿が有効になる時間
+자세한 정보는 [Github Repo](https://github.com/numerai/numerai-cli)의 도큐멘테이션을 참조하시기 바랍니다.
 
-[アカウント設定](https://numer.ai/account)にウェブフックのURLを追加すると、Numeraiは土曜日の19:00 UTC（日本時間で04:00）（ラウンド開始から1時間後）に自動で実行されます。\
-Numerai-cliを使用せず、独自環境で予測ファイルの自動投稿をしたい場合、本部分を修正してください！\
-もし、日曜日の2:00 UTC（日本時間で11:00）までに予測ファイルが提出されなかった場合は、警告メールをお送りします。\
-二回目の実行も失敗した場合は、日曜日の19:00 UTC（日本時間で04:00）に再度実行されます。それでも失敗した場合は、月曜日の2:00 UTC（日本時間で11:00）にメールでお知らせします。
+## 타이밍
 
-## 以下、詳細なセットアップ手順を載せます。
+예측 노드에 할당된 웹훅 URL은 자동으로 뉴머라이 모델에 등록됩니다.
 
-## 引用元
+뉴머라이는 웹훅들을 토요일 19:00 UTC (한국시간 일요일 04:00 KST) - 라운드 시작 후 1시간 후 트리거가 실행 됩니다. 일요일 02:00 UTC (한국시간 일요일 11:00 KST)까지 예측 파일 제출을 받지 못한 경우 컴퓨팅 작업이 실패했다는 경고의 메시지를 이메일로 보내드립니다.
 
-{% embed url="https://qiita.com/tit:BTCQASH/items/fbcc9271c0a8977ff216" %}
+실패했을 경우 일요일 19:00 UTC (한국시간 월요일 04:00 KST)에 해당 웹훅을 트리거하도록 다시 시도합니다. 또 다시 실패했을 경우 월요일 2:00 UTC (한국시간 월요일 11:00 KST)에 최종 메시지 이메일이 보내집니다.
 
-## はじめに
+## 업그레이드
 
-今回の記事では、Numeraiに自動で予測ファイルを提出する[Numerai CLI](https://github.com/numerai/numerai-cli)を紹介します。Numerai CLIとは、Numeraiの予測ファイルを自動で提出できるように支援するパッケージです。
-
-古いwindows(win8など）を使用している方は、本記事の手順通りにインストール・アクチべートすることをお勧めします。windows10,Linuxユーザーの方はすんなりとインストールできるらしいので、win8にかかわる部分は読み飛ばしてください。
-
-## 目次
-
-1. AWS(amazon web service)の設定
-2. Numerai APIキーの取得
-3. Python・Dockerの設定
-4. numerai-cliの使い方 5.numerai computeを使用するまでの手順
-
-## 今回使用する環境
-
-windows8.1 Pro, Intel Core i5 9600K メモリ 32GB
-
-## ①AWS(amazon web service)の設定
-
-　AWSはAmazonが運営しているクラウドコンピューティングサービスの一つです。Amazonが持っているCPU/GPUなどをオンラインで使用できるのでタスクの自動化に向いています。Numerai Computeノードをセットアップし、モデルをデプロイするまでを説明します。
-
-1.AWSのアカウントを作成する。\
-AWSのアカウントの作成方法は[**本リンク**](https://portal.aws.amazon.com/billing/signup)を参照ください。連絡先情報・クレカの番号が必要となりますが、新規登録者は無料枠の分までは無料です。
-
-2.AWSの請求を有効にする。\
-[**AWSの請求を有効**](https://console.aws.amazon.com/billing/home?#/paymentmethods)にし、コードを実行できるようにします。公式曰く、月当たり5USD以下の費用がかかるそうです。
-
-3.IAM ユーザーの事前設定。\
-[**IAM**](https://console.aws.amazon.com/billing/home?#/paymentmethods)(Identity and Access Management)とはAWS のアクセスを安全に管理するためのウェブサービスのことです。\
-アカウント作成時点では、ルート権限を持つユーザーが作成されますが、IAMユーザーの設定をすると、特定の権限を持ったユーザーを作成することができます。今回は、Numeraiに自動で予測を提出するためだけのユーザーを作成します。\
-まず、[**本リンク**](https://console.aws.amazon.com/iam/home?region=us-east-1#/policies%24new?step=edit)を開いた後、JSONをクリックしてください。初期時点ではコードが入っていますが削除し、以下のコードをペーストしてください。
-
-(\*古いNumerai-cliを使用している方は、本部分が以下のコードと違う可能性があります。その場合は、以前のコードを削除し、以下のコードと置換してください。以前のコードのままだと、IAMの権限エラーが出て詰みます。）
-
-![](<../.gitbook/assets/image (34).png>)
+새 버전(v0.3)으로 업그레이드하는 방법은 간단합니다.
 
 ```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "apigateway:*",
-                "logs:*",
-                "s3:List*",
-                "ecs:*",
-                "lambda:*",
-                "ecr:*",
-                "ec2:*",
-                "iam:*",
-                "batch:*",
-                "s3:*"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+pip3 install --upgrade numerai-cli --user
+numerai upgrade
 ```
 
-次のステップボタン（右下）を**二回**クリックすると、以下の画面になります。
+\*최신 버전(v0.3)은 v0.1 및 v0.2 버전과 호환되지 않습니다.
 
-![](<../.gitbook/assets/image (6).png>)
+## **도움요청**
 
-本画面の名前の部分に、任意の名前（例えばcompute-setup-policy）を入れてください。こちらの名前を後で使います。
+단계별 [튜토리얼](https://docs.numer.ai/help/compute-tutorial)을 읽으시거나 [유튜브 비디오](https://youtu.be/-3y0N7fqfOI)를 시청하시기 바랍니다.
 
-4.IAM ユーザーの作成\
-IAMユーザーの作成を行うために、[**本リンク**](https://console.aws.amazon.com/iam/home?region=us-east-1#/users%24new?step=details)から設定を行います。ユーザー名に先ほど設定した名前（例えばcompute-setup-policy）を入れ、プログラムによるアクセスにチェックを入れた後、次のステップを押してください。
-
-![](<../.gitbook/assets/image (36).png>)
-
-既存のポリシーを直接アタッチを押し、先ほど作成した名前で検索してください。その後、チェックボックスにチェックをいれ、次のステップを**二回**押してください。
-
-![](<../.gitbook/assets/image (28).png>)
-
-入力した後、ユーザーの作成を押せばIAMユーザーの設定は完了です。アクセスキー IDとシークレットアクセスキーが表示されるので、メモしてください。
-
-![](<../.gitbook/assets/image (11).png>)
-
-## ②Numerai APIキーの取得
-
-Numerai APIキーは[設定](https://numer.ai/account)から取得することができます。Create API Keyから\
-Upload submissionsにチェックを入れた状態でAPIキーを作成してください。
-
-## ③Python・Dockerの設定
-
-Windowsユーザー向けの設定方法を説明します。 numerai-cliを動かすには、python,dockerが必要です。自動でインストールするスクリプトが用意されているので、windows10を利用されている方は以下のコードを入力してください。
-
-```
-powershell -command "$Script = Invoke-WebRequest 'https://raw.githubusercontent.com/numerai/numerai-cli/master/scripts/setup-win10.ps1'; $ScriptBlock = [ScriptBlock]::Create($Script.Content); Invoke-Command -ScriptBlock $ScriptBlock"
-```
-
-このコードがうまく動いた人は以下の手順は不要です。
-
-windows8環境場合は、以下の手順でPython,Docker-toolboxを導入します。\
-**特に**Dockerのインストールは多種多様なエラーが出ます。うまくいった例を説明しますが、環境によっては再現しないこともあることをご了承ください。
-
-①Pythonのインストール\
-[**こちらのページ**](https://www.python.org/downloads/release/python-392/)からPython 3.9.2をインストールしてください。インストール後はPathを通してください。(個人によって異なりますが、例えば、C:\Users\USER\AppData\Local\Programs\Python\Python39\Scripts\ をPathに追加してください）
-
-![](<../.gitbook/assets/image (25).png>)
-
-②Docker-toolboxのインストール\
-Dockerのインストールは『非常に』エラーが起きやすいです。以下の手順でインストールしてください。
-
-i)visualboxのインストール\
-[**こちらのページ**](https://pythonlinks.python.jp/ja/index.html)から最新版のVisualboxをダウンロードし、インストールしてください。\
-ii)Docker-toolboxのインストール\
-[**こちらのページ**](https://github.com/docker/toolbox/releases)からDockerToolbox-18.02.0-ceをダウンロードし、インストールしてください。インストールするときに、Visualboxのチェックを\*\*『絶対に』\*\*外してください。([**参考文献**](https://cpptake.com/archives/476))\
-Gitのインストールは同時に行っても問題ありませんので、Gitにチェックを入れてください。\
-[![image.png](https://staging-qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F1015710%2Fc4cbcb7a-92b7-fc06-2c61-7136f27d028f.png?ixlib=rb-4.0.0\&auto=format\&gif-q=60\&q=75\&s=3a3d1a6d0b75b6eb912663273e23f4ef)](https://camo.qiitausercontent.com/25e351c0ace591b7d05a5b10e6bedfbb7988340e/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e61702d6e6f727468656173742d312e616d617a6f6e6177732e636f6d2f302f313031353731302f63346362636237612d393262372d666330362d326336312d3731333666323764303238662e706e67)
-
-**(このインストール方法に気が付くまで2日かかりました。Docker-toolboxからvisualboxをインストールすると、Numerai cliを使用できないので、必ずこの手順を守ってください）**
-
-iii)docker-machineの設定\
-**docker quickstart terminal**を起動し、以下のコードを入れてください。
-
-```
-docker run hello-world
-```
-
-以下の画像のように表示されればDockerの設定は問題ありません。
-
-![](<../.gitbook/assets/image (22).png>)
-
-次に、Numerai computeで使用するdockerイメージの作成を行います。以下のコードを入力してください。
-
-```
-docker-machine rm default
-docker-machine create -d virtualbox --virtualbox-cpu-count=2 --virtualbox-memory=4096 --virtualbox-disk-size=50000 default
-```
-
-＊Dockerが見つからない、などのエラーが出た場合は、パスが通っていないので、コントロールパネルからシステムの詳細設定を開き、環境変数→新規を押し、Pathを下図のように設定してください。\
-**(docker toolboxの保存場所は環境によって異なる可能性があります。今回の場合はC:\Program Files\Docker Toolboxでした。）**
-
-![](<../.gitbook/assets/image (31).png>)
-
-＊＊ Docker daemon not running. Make sure you've started "Docker Quickstart Te rminal" and then run this command again. というエラーが出た場合は、次のコードでdefault を再起動してください。
-
-```
-docker-machine restart default
-```
-
-それでもエラーが出る場合は、
-
-```
-docker-machine env
-```
-
-を入力して出てくる、
-
-![](<../.gitbook/assets/image (24).png>)
-
-```
-eval $("C:\Program Files\Docker Toolbox\docker-machine.exe" env)
-```
-
-を入力してください（環境によってこの部分は異なる可能性があります。）
-
-これでdefaultのアクティブ化ができたはずです。（ACTIVEが＊になればOK)
-
-![](<../.gitbook/assets/image (29).png>)
-
-iv) pipとnumerai-cliのインストール\
-[**こちらのページ**](https://www.python-izm.com/tips/pip/)を参考にpipをインストールしてください。\
-pipを入れたら、
-
-```
-pip3 install numerai-cli --user
-```
-
-として、numerai-cliをインストールしてください。
-
-## ④numerai-cliの使い方
-
-Docker quick start terminal上で"numerai --help"と打つと、使用できるコマンドリストが取得できます。
-
-![](<../.gitbook/assets/image (23).png>)
-
-numerai copy-example: Numerai運営が用意したexampleファイルをダウンロードできます。
-
-```
-numerai copy-example -e tournament-python3 
-numerai copy-example -e signals-python3 
-```
-
-などとすることで、Numerai Tournament用のexampleファイルや、Signals用のファイルをダウンロードできます。
-
-![](<../.gitbook/assets/image (3).png>)
-
-numerai doctor: numerai-cliの状態を取得します。正常なら、以下のようになります。
-
-![](<../.gitbook/assets/image (35).png>)
-
-numerai list-constants: デフォルトの状態を表示します。
-
-![](<../.gitbook/assets/image (33).png>)
-
-numerai node: DockerFileをAWSにアップロードするためのコマンドです。config, deploy, testをよく使います。
-
-![](<../.gitbook/assets/image (1).png>)
-
-numerai setup: Numerai cliとAPIキーを初期化するコマンドです。記事上部で用意したNumerai public IDやAWSのキーを保存できます。
-
-numerai uninstall: Numerai cliに関連するファイル・AWSの設定などをすべてアンインストールします。
-
-numerai upgrade: .numeraiフォルダにkeyファイルなどを格納します。
-
-## ⑤numerai computeを使用するまでの手順
-
-i)`numerai setup`を実行し、Numerai public IDやAWSのキーを保存する。\
-ii)`numerai upgrade`を実行し、.numeraiフォルダに必要な情報を移す\
-iii)`numerai copy-example -e tournament-python3` を実行し、tournament-python3フォルダを作成する\
-iv)`cd tournament-python3` として、tournament-python3フォルダに移動する。\
-v)prediction.pyを開き、MODEL\_CONFIGS内のNoneを自分のモデルのUUIDに変更する。\
-（UUIDの取得は[こちらから](https://numer.ai/models))
-
-![](<../.gitbook/assets/image (20).png>)
-
-vi)`numerai node -m tit_btcqash_compute config -e tournament-python3 -s mem-md` (tit\_btcqash\_computeの部分は個人によって異なります。モデル名を入れてください）を実行する。\
-（本コードは、tournament-python3フォルダのdockerfileを使用して、mem-mdで構成されたCPU/メモリーをAWSで構成する、というものです）\
-vii)`numerai node deploy` を実行し、AWSに必要情報をアップロードする\
-viii)`numerai node test`を実行し、正常に動作するか確かめる。
-
-i)\~viii)が実行できればnumerai-computeを使用する準備はできました。\
-predict.pyを書き変えて自分のモデルをアップロードしてみましょう。pklファイルなどもpredict.pyと同じフォルダにおいておけば、自動でAWSにアップロードしてくれます。\
-なお、新しいモデルをアップロードするときは、
-
-```
-numerai uninstall
-```
-
-を実行してからi)\~viii)の手順を実行するとうまくいくと思います。
-
-## 参考リンク
-
-[Numerai CLI wiki](https://github.com/numerai/numerai-cli/wiki/Amazon-Web-Services)\
-[Numerai Computeの設定方法（動画版、英語）](https://www.youtube.com/watch?v=YFgXMpQszpM\&ab\_channel=Numerai)\
-[Numerai CLI tutorial](https://docs.numer.ai/help/compute-tutorial)\
-[Numerai CLI　Medium記事](https://medium.com/numerai/building-the-numerai-network-af733c29d56f)\
-[Youtube](https://www.youtube.com/watch?v=7NWAlQEay\_w\&t=2060s\&ab\_channel=Numerai)
-
-本記事が参考になった方はNMRを投げてくれるとtit\_BTCQASH氏がきっと喜びます。\
-NMR：0x0000000000000000000000000000000000021d96
-
-## Help <a href="getting-started" id="getting-started"></a>
-
-ステップバイステップの[チュートリアル](https://docs.numer.ai/help/compute-tutorial)に従うか、[YouTube](https://www.youtube.com/watch?v=YFgXMpQszpM)のビデオをご覧ください。
-
-[compute rocketchat channel](https://community.numer.ai/channel/compute)で助けを求めてください。
+더 자세한 도움이 필요하시면 [RocketChat](https://community.numer.ai)에 [#Compute](https://community.numer.ai/channel/compute) 채널 또는 [Slack](https://numerai-kr.slack.com/join/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw#/shared-invite/email) (한국어)에 에 도움을 요청하시기 바랍니다.
