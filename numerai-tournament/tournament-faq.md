@@ -38,7 +38,7 @@ NMR을 예측치에 베팅하는 것으로 토너먼트 참가자와 뉴머라�
 
 예측 파일에 괄호, 퍼센트 기호 또는 공간이 포함된 경우 제출이 실패합니다. 모든 특수문자를 삭제하시고 다시 시도하시기 바랍니다.
 
-도움이 필요하시면 RocketChat (영어) 이나 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw) (한국어) 으로 문의하시기 바랍니다.
+도움이 필요하시면 [RocketChat](https://community.numer.ai) (영어) 이나 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw) (한국어) 으로 문의하시기 바랍니다.
 
 #### **제출물을 업로드 했는데 hang 할 경우 어떻게 하나요?**
 
