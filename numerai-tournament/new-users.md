@@ -29,11 +29,11 @@
 
 {% embed url="https://www.kaggle.com/carlolepelaars/how-to-get-started-with-numerai?scriptVersionId=47253779" %}
 
-Katsu1110님의 MLP를 사용한 데이터에 학습 절차의 Kaggle Kernel 튜토리얼
+[Katsu1110](https://twitter.com/kk1110tt)님의 MLP를 사용한 데이터에 학습 절차의 Kaggle Kernel 튜토리얼
 
 {% embed url="https://www.kaggle.com/code1110/numerai-mlp-with-kerastuner-starter?scriptVersionId=52496687" %}
 
-
+[Architrage](https://numer.ai/arbitrage)님의 유튜브 튜토리얼 시리즈
 
 {% embed url="https://youtu.be/8Heck3JAyAw?list=PLz3D6SeXhT3v39noGoGEDFMfhZsa1P9Qz" %}
 
