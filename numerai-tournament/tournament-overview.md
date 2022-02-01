@@ -96,7 +96,7 @@ numerai docker deploy
 모델의 성능은 Diagnostics 기능을 이용하셔서 진단할 수 있습니다. 과거의 데이터에서 제출한 예측파일의 성능과 리스크를 측정해 주는 기능입니다.
 
 {% hint style="info" %}
-**이 진단 툴을 반복적으로 사용하시면 바로 과적합화 될 수 있습니다. 본 툴은 최종 확인용으로 사용하는 것이 좋습니다.**
+이 진단 툴을 반복적으로 사용하시면 바로 과적합화 될 수 있습니다. 본 툴은 최종 확인용으로 사용하는 것이 좋습니다.
 {% endhint %}
 
 ![](../.gitbook/assets/diagnostics.gif)
@@ -208,4 +208,4 @@ payout\_factor의 수치나 corr\_multiplier과 mmc\_multiplier의 선택권은 
 
 도움이 필요하신가요?
 
-질문과 피드백은 [RocketChat](https://community.numer.ai/home) (영어) 또는 [Discord](https://discord.gg/TxNzq3Nrcc) (한국어)에 올려 주시기 바랍니다!
+질문과 피드백은 [RocketChat](https://community.numer.ai/home) (영어) 또는 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw) (한국어)에 올려 주시기 바랍니다!
