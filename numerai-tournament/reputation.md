@@ -35,4 +35,4 @@ def round_weight(delta, day):
 
 최초 제출이 늦어지거나 실패할 경우 example\_predictions과 동등한 점수가 부여됩니다. 그 이후 예측 파일이 제출되지 않은 경우 -0.1 아주 낮은 점수가 부여됩니다.
 
-이 패널티를 피하기 위해서는 Numerai-CLI을 사용하셔서 매주 제출 워크플로우를 자동화 하시면 도움이 됩니다. 자세한 내용은 Numerai-CLI 부분에서 찾아 주세요.
+이 패널티를 피하기 위해서는 numerai-cli을 사용하셔서 매주 제출 워크플로우를 자동화 하시면 도움이 됩니다. 자세한 내용은 [numerai-cli](numerai-compute.md) 부분에서 찾아 주세요.
