@@ -8,7 +8,7 @@
 * [Numerai-CLI와 Compute](numerai-tournament/numerai-compute.md)
 * [툴과 라이브러리](numerai-tournament/tools-and-libraries.md)
 * [메타 모델 공헌도 (MMC)](numerai-tournament/meta-model-contribution-mmc.md)
-* [특성중화 상관수치 (FNC)](numerai-tournament/feature-neutral-correlation.md)
+* [특성중화 상관계수 (FNC)](numerai-tournament/feature-neutral-correlation.md)
 * [평판 (Reputation)](numerai-tournament/reputation.md)
 * [신규 참가자들을 위한 팁](numerai-tournament/new-users.md)
 * [토너먼트에 관한 FAQ](numerai-tournament/tournament-faq.md)
