@@ -38,7 +38,7 @@ NMR을 예측치에 베팅하는 것으로 토너먼트 참가자와 뉴머라�
 
 예측 파일에 괄호, 퍼센트 기호 또는 공간이 포함된 경우 제출이 실패합니다. 모든 특수문자를 삭제하시고 다시 시도하시기 바랍니다.
 
-도움이 필요하시면 [RocketChat](https://community.numer.ai) (영어) 이나 [Discord](https://discord.gg/WkRnr4JXW2) (한국어) 으로 문의하시기 바랍니다.
+도움이 필요하시면 [RocketChat](https://community.numer.ai) (영어) 이나 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw) (한국어) 으로 문의하시기 바랍니다.
 
 #### **제출물을 업로드 했는데 hang 할 경우 어떻게 하나요?**
 
@@ -50,7 +50,7 @@ NMR을 예측치에 베팅하는 것으로 토너먼트 참가자와 뉴머라�
 
 #### 질문이 너무 많아서 어떻게 해야 할지 모르겠어요. 도와주세요!!!
 
-[RocketChat](https://community.numer.ai)에 참여하시고 [#newusers ](https://rocketchat.numer.ai/channel/newusers)채널에 접속해주시기 바랍니다. 질문을 하고 기다리시면 누군가가 답을 해주실 것입니다. 또 뉴머라이 한국어 커뮤니티 Discord 서버에 한국어로 질문하셔도 되겠습니다.
+[RocketChat](https://community.numer.ai)에 참여하시고 [#newusers ](https://rocketchat.numer.ai/channel/newusers)채널에 접속해주시기 바랍니다. 질문을 하고 기다리시면 누군가가 답을 해주실 것입니다. 또 뉴머라이 한국어 커뮤니티 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw) 서버에 한국어로 질문하셔도 되겠습니다.
 
 #### 검증시에 corr이 xx 였습니다. 좋은 결과인가요?
 
