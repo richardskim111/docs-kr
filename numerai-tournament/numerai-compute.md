@@ -14,7 +14,7 @@ numerai-cli를 사용하여 고유한 클라우드 인프라를 프로비저닝�
 
 ## 시작 방법
 
-numerai-cli를 사용하려면 Docker, Python3, Numerai API Key, AWS API Key 등 네가지의 요소들이 필요합니다. 이 네가지 요소를 갖추고 있다면 바로 시작할 수 있습니다.
+numerai-cli를 사용하려면 Docker, Python3, Numerai API Key, AWS API Key 등 네가지의 요소들를 갖추고 있다면 바로 시작할 수 있습니다.
 
 ```
 pip3 install numerai-cli
