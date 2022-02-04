@@ -10,7 +10,7 @@ description: 공식규칙 및 시작 전 가이드
 
 대회에 참여하신분들은 주식거래의 기반이 되는 signal (시그널)을 작성한뒤 제출하시면 뉴머라이는 모두의 시그널을 크라우드소싱을 이용해 메타모델을 작성해 헤지펀드의 운영에 사용되게 됩니다. 시그널스는 참가자들의 시그널이 얼마나 톡창적이고 우수한 시그널인지 비교할 수 있고 또 제출한 시그널의 성능의 따라 스테이킹 관계량에 비례한 NMR 토큰을 얻을 수 있습니다.
 
-뉴머라이 시그널스 는 뉴머라이 헤지펀드를 구축하기 위해 사용되며 뉴머라이 마스터플랜의 일부입니다. [Medium Post](https://medium.com/numerai/building-the-last-hedge-fund-introducing-numerai-signals-12de26dfa69c)나 [short film](https://www.youtube.com/watch?v=GWeC2PK4yXQ\&feature=youtu.be)에서 상세한 내용이 설명되어 있습니다.
+뉴머라이 시그널스 는 뉴머라이 헤지펀드를 구축하기 위해 사용되며 뉴머라이 마스터플랜의 일부입니다. [Medium Post](https://medium.com/numerai/building-the-last-hedge-fund-introducing-numerai-signals-12de26dfa69c)나 아래의 영상에서 상세한 내용이 설명되어 있습니다.
 
 {% embed url="https://youtu.be/GWeC2PK4yXQ" %}
 
