@@ -4,7 +4,7 @@
 
 * [YouTube](https://www.youtube.com/channel/UCQt3RVSKsDpFgYIm1A-nWbA)에서 뉴머라이 공식채널을 구독하고 비디오 튜토리얼 알림을 받을 수 있습니다.
 * RocketChat #NewUsers 채널(영어), #Signals 채널(영어) 에서 참고가 되는 정보를 얻을 수 있습니다.
-* 한국어로는 비공식적으로 운영되는 [Discord](https://discord.gg/WkRnr4JXW2)서버를 참고 하시길 바랍니다.
+* 한국어로는 비공식적으로 운영되는 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw) 참고 하시길 바랍니다.
 * 데이터 분석, 힌트, 튜토리얼 관련 글은 [뉴머라이 게시판](https://forum.numer.ai)을 체크해 주시기 바랍니다.
 
 ## **튜토리얼과 노트북**
