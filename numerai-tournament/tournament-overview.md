@@ -210,4 +210,4 @@ payout = at_risk_stake * payout_factor * (corr * corr_multiplier + mmc * mmc_mul
 
 도움이 필요하신가요?
 
-질문과 피드백은 [RocketChat](https://community.numer.ai/home) (영어) 또는 [Discord](https://discord.gg/WkRnr4JXW2) (한국어)에 올려 주시기 바랍니다!
+질문과 피드백은 [RocketChat](https://community.numer.ai/home) (영어) 또는 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw)(한국어)에 올려 주시기 바랍니다!
