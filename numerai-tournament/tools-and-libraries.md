@@ -22,7 +22,7 @@ Numerai Insights는 모델 성능을 나란히 비교할 수 있도록 [james.g9
 
 {% embed url="https://www.numerai-insights.com" %}
 
-[Bouwe Ceunen](https://twitter.com/BouweCeunen)의 [Numerai Payouts](https://twitter.com/NumeraiPayouts)는 대시보드 이용하거나 iOS 및 Android용 앱을 다운로드할 수 있습니다.
+[Bouwe Ceunen](https://twitter.com/BouweCeunen)의 [Numerai Payouts](https://twitter.com/NumeraiPayouts)는 대시보드를 이용하거나 iOS 및 Android용 앱을 다운로드할 수 있습니다.
 
 {% embed url="https://dashboard.numeraipayouts.com" %}
 
