@@ -1,6 +1,6 @@
 # Table of contents
 
-* [뉴머라이 한국어 도큐먼테이션](README.md)
+* [뉴머라이 한국어 다큐멘테이션](README.md)
 
 ## 뉴머라이 토너먼트 <a href="#numerai-tournament" id="numerai-tournament"></a>
 
