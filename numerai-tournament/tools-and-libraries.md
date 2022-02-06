@@ -18,7 +18,7 @@
 
 ### 커뮤니티 계발 대시보드
 
-Numerai Insights는 [james.g9](https://numer.ai/fuka\_eri)에 의해 모델, 보류 중인 지급액 및 전체 모델 수집 성능을 나란히 비교할 수 있도록 설계된 애플리케이션입니다.
+Numerai Insights는 [james.g9](https://numer.ai/fuka\_eri)에 의해 지급액 및 전체 모델 성능을 나란히 비교할 수 있도록 설계된 애플리케이션입니다.
 
 {% embed url="https://www.numerai-insights.com" %}
 
