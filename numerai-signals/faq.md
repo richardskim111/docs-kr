@@ -26,7 +26,7 @@
 
 #### **주가 데이터와 일반적으로 도움이 되는 데이터는 어디에서 얻을 수 있나요?**
 
-[이 계시판 글](https://forum.numer.ai/t/free-or-cheap-data-and-tools-for-numerai-signals/350/8)을 참조해 주새요.
+[이 게시판 글](https://forum.numer.ai/t/free-or-cheap-data-and-tools-for-numerai-signals/350/8)을 참조해 주새요.
 
 #### 내 intellectual property (지적재산- IP)가 보호되고 있는지 어떻게 알 수 있습니까?
 
