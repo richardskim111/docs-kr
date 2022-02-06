@@ -1,6 +1,6 @@
 # 신규 참가자들을 위한 팁
 
-현재 다양한 레벨을 지원하는 새로운 참가자용 동영상 및 튜토리얼을 만들고 있습니다. 튜토리얼이 완성되기 전까지는 다른 참가자분들이 작성한 뉴머라이 시그널스 기사를 참고해 주시기 바랍니다.
+현재 다양한 레벨을 지원하는 새로운 참가자용 동영상 및 튜토리얼을 만들고 있습니다. 튜토리얼이 완성되기 전까지는 다른 참가자들이 작성한 뉴머라이 시그널스 기사를 참고해 주시기 바랍니다.
 
 * [YouTube](https://www.youtube.com/channel/UCQt3RVSKsDpFgYIm1A-nWbA)에서 뉴머라이 공식채널을 구독하고 비디오 튜토리얼 알림을 받을 수 있습니다.
 * [RocketChat](https://community.numer.ai) [#NewUsers](https://rocketchat.numer.ai/channel/newusers) 채널(영어), [#Signals](https://rocketchat.numer.ai/channel/signals) 채널(영어) 에서 참고가 되는 정보를 얻을 수 있습니다.
