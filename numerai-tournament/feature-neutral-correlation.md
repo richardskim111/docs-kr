@@ -41,4 +41,4 @@ def calculate_fnc(sub, targets, features):
 
 ## 논의
 
-보다 자세한 FNC의 계산에 대해서는 [이 링크](https://forum.numer.ai/t/model-diagnostics-feature-exposure/899)를 참조해 주세요.
+보다 자세한 `fnc`의 계산에 대해서는 [이 링크](https://forum.numer.ai/t/model-diagnostics-feature-exposure/899)를 참조해 주세요.
