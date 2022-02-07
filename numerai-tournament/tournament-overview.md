@@ -121,7 +121,7 @@ correlation = np.corrcoef(labels, ranked_predictions)[0, 1]
 
 예측치는 메타 모델 공헌도 (`mmc`) 와 특성중립화 상관계수 (`fnc`)에 대해서도 스코어가 매겨집니다. 이 두 수치에 대한 자세한 내용은 각 수치의 페이지를 참조해 주세요.\
 \
-예측치는 매주 라운드가 시작된 후 4주에 걸쳐 평가됩니다. 라운드 마감 후 다음주  요일에 첫 평가를 받고 4주 후 수요일에 최종 스코어를 받습니다.
+예측치는 매주 라운드가 시작된 후 4주에 걸쳐 평가됩니다. 라운드 마감 후 다음주   요일에 첫 평가를 받고 4주 후 수요일에 최종 스코어를 받습니다.
 
 ![](../.gitbook/assets/calendar\_1.png)
 
@@ -133,7 +133,7 @@ correlation = np.corrcoef(labels, ranked_predictions)[0, 1]
 
 ![](../.gitbook/assets/performance.png)
 
-특정 라운드에 줌인하여 라운드 내의 하루하루 변경된 스코어를 확인할 수도 있습니다.&#x20;
+특정 라운드에 줌인하여 라운드 내의 하루하루 변경된 스코어를 확인할 수 있습니다.&#x20;
 
 ![](../.gitbook/assets/daily\_performance.png)
 
@@ -196,7 +196,7 @@ payout = at_risk_stake * payout_factor * (corr * corr_multiplier + mmc * mmc_mul
 
 ![](../.gitbook/assets/payout\_4weeks.png)
 
-지속적으로 높은 스코어를 달성하면 얻을 수 있는 NMR의 금액은 점차적으로 증대합니다. 모델이 52주 동안 매주 같은 점수를 받는다고 가정했을 때 최종예측 NMR 금액은 아래에 차트를 보기 바랍니다.
+지속적으로 높은 스코어를 달성하면 얻을 수 있는 NMR의 금액은 점차적으로 증대합니다. 모델이 52주 동안 매주 같은 점수를 받는다고 가정했을 때 최종 NMR 금액 예측은 아래에 차트를 보기 바랍니다.
 
 ![](../.gitbook/assets/payout\_cumulative.png)
 
