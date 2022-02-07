@@ -67,7 +67,7 @@ predictions.to_csv("predictions.csv")
 
 마감시간은 매주 월요일 14:30 UTC (한국시간 월요일 23:30 KST)입니다. 제출이 늦어질 경우 토너먼트에서 제외됩니다.
 
-[Numerapi](https://github.com/uuazed/numerapi) (파이썬)나 [Rnumerai](https://github.com/Omni-Analytics-Group/Rnumerai) (R)또는 [GraphQL API](https://api-tournament.numer.ai)를 사용하여 제출을 수동화 할 수 도 있습니다. 다음은 코드의 예입니다.
+[Numerapi](https://github.com/uuazed/numerapi) (파이썬)나 [Rnumerai](https://github.com/Omni-Analytics-Group/Rnumerai) (R) 또는 [GraphQL API](https://api-tournament.numer.ai)를 사용하여 제출을 수동화 할 수 도 있습니다. 다음은 코드의 예입니다.
 
 ```python
 import numerapi
@@ -98,7 +98,7 @@ numerai docker deploy
 모델의 성능은 Diagnostics 툴을 이용하여 진단할 수 있습니다. 과거의 데이터를 기반으로 제출한 예측파일의 성능과 리스크를 진단해 주는 기능의 툴입니다.
 
 {% hint style="info" %}
-이 진단 툴을 반복적으로 사용하시면 과적합화 될 수 있습니다. 본 툴은 최종 확인용으로만 사용하는 것이 좋습니다.
+이 진단 툴을 반복적으로 사용하면 과적합화 될 수 있습니다. 본 툴은 최종 확인용으로만 사용하는 것이 좋습니다.
 {% endhint %}
 
 ![](../.gitbook/assets/diagnostics.gif)
@@ -121,7 +121,7 @@ correlation = np.corrcoef(labels, ranked_predictions)[0, 1]
 
 예측치는 메타 모델 공헌도 (`mmc`) 와 특성중립화 상관계수 (`fnc`)에 대해서도 스코어가 매겨집니다. 이 두 수치에 대한 자세한 내용은 각 수치의 페이지를 참조해 주세요.\
 \
-예측치는 매주 라운드가 시작된 후 4주에 걸쳐 평가됩니다. 라운드 마감 후 다음주 요일에 첫 평가를 받고 4주 후 수요일에 최종 스코어를 받습니다.
+예측치는 매주 라운드가 시작된 후 4주에 걸쳐 평가됩니다. 라운드 마감 후 다음주  요일에 첫 평가를 받고 4주 후 수요일에 최종 스코어를 받습니다.
 
 ![](../.gitbook/assets/calendar\_1.png)
 
