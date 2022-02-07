@@ -38,7 +38,7 @@ description: Numeraiの改善提案をすることで報酬がもらえます
 
 ### 버그를 보고하는 방법
 
-[RocketChat](https://community.numer.ai) [#support channel](https://community.numer.ai/channel/support)로 메세지를 보내면 뉴머라이 팀이 답할 것입니다.
+[RocketChat](https://community.numer.ai) [#support channel](https://community.numer.ai/channel/support)로 메세지를 보내면 뉴머라이팀이 답할 것입니다.
 
 리포트에는 버그로 인해 어떤 문제가 발생하고 있는지를 포함시켜 주면 감사하겠습니다. 필요하면 사용자 이름 등 상세 정보도 기입해 주세요. 또 에러를 재현하는 방법이나 에러 메세지 스크린샷도 포함해 주세요.
 
