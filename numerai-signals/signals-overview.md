@@ -56,20 +56,20 @@ description: 공식규칙 및 시작 전 가이드
 
 ### **유니버스 (대상 주식)**
 
-유니버스는 세계의 상위 5,000개의 대형주를 포함하고 있습니다. 유니버스는 매주 갱신됩니다만 갱신 대상이 되는 것은 거래량이 적은 몇 종목 뿐입니다.
+유니버스는 세계의 상위 5,000개의 대형주를 포함하고 있습니다. 유니버스는 매주 갱신되지만 갱신 대상이 되는 것은 거래량이 적은 몇 종목 뿐입니다.
 
 최신 유니버스는 [latest universe file](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/universe/latest.csv)을 다운로드 받아 볼 수 있습니다.
 
-과거의 유니버스 정보는 [historical targets file](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/signals\_train\_val\_bbg.csv) 다운로드 받아 보실 수 있습니다. 이 파일에는 `target_4d`와 `target_20d`의 두 개의 대상 컬럼이 있습니다. `target_20d`가 점수 매기기 및 지불을 위해 시그널이 평가 되는 대상입니다.
+과거의 유니버스 정보는 [historical targets file](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/signals\_train\_val\_bbg.csv) 다운로드 받아 볼 수 있습니다. 이 파일에는 `target_4d`와 `target_20d`의 두 개의 대상 컬럼이 있습니다. `target_20d`가 점수 매기기 및 페이아웃을 위해 시그널이 평가 되는 대상입니다.
 
-`target_4d`와 `target_20d`의 값은 라운드 오픈에서 각각 11일과 33일 후에 표기 됩니다. `target_4d`과는 달리 `target_20d`는 확인 되는 데 더 오래 걸리므로 가장 최근의 날짜의 `target_20d`은 `NaN` 값을 갖습니다.
+`target_4d`와 `target_20d`의 값은 라운드 오픈에서 각각 11일과 33일 후에 표기 됩니다. `target_4d`와는 달리 `target_20d`는 확인 되는 데 더 오래 걸리므로 가장 최근의 날짜의 `target_20d`은 `NaN` 값을 갖습니다.
 
 ### **시그널 제출**
 
 작성한 데이터를 뉴머라이 시그널스에 제출할 때는 최소 2개의 컬럼을 포함해야 합니다.
 
 * `cusip`, `sedol` 또는 `bloomberg_ticker`열 - 값은 헤더의 ticker 유형과 관련된 활성 티커여야 합니다.
-* `signal` 열-값은 0에서 1 사이여야 합니다. (0,1 제외)
+* `signal` 열 - 값은 0에서 1 사이여야 합니다. (0,1 제외)
 
 또한, 유효한 제출을 하기 위해서는
 
@@ -78,18 +78,18 @@ description: 공식규칙 및 시작 전 가이드
 
 두 줄만 예측한 결과는 현재 `live` 시간대를 지원한다고 가정합니다.
 
-또한 signal 파일을 제출하면 과거의 퍼포먼스, 리스크, 잠재적인 수익에 대한 진단을 할 수 있습니다. 검증 기간은 20130104 부터 입니다.
+또한 시그널 파일을 제출하면 과거의 퍼포먼스, 리스크, 잠재적인 수익에 대한 진단을 할 수 있습니다. 검증 기간은 20130104 부터 입니다.
 
 검증기간을 포함한 예측결과에는 `friday_date`, `data_type`열을 포함해야 합니다.
 
-* `friday_date` 열 - 뉴머라이 시그널스에서는 라운드의 시작이 금요일이기 때문에 금요일에 해당하는 날짜를 쓰셔야 합니다.
+* `friday_date` 열 - 뉴머라이 시그널스에서는 라운드의 시작이 금요일이기 때문에 금요일에 해당하는 날짜를 써야 합니다.
 * `data_type` 열 - 값은 `live` 또는 `validation`만을 취할 수 있습니다. `data_type`이 `live`인 행에는 가장 최근 금요일 날짜가 포함되어 있어야 합니다.
 
 ![](<../.gitbook/assets/signals (1).png>)
 
 최신의 제출 예는 [이 링크](https://numerai-signals-public-data.s3-us-west-2.amazonaws.com/example\_signal/latest.csv)를 통해 다운로드 할 수 있습니다.
 
-### **시그 진단**
+### 시그널 진단
 
 시그널 데이터를 제출하면 과거의 성능, 리스크, 잠재적인 수익을 진단할 수 있습니다. 이 절차는 보통 제출파일에 포함되어 있는 주 수와 티커 수에 따라 10\~15분 정도 소요됩니다.
 
