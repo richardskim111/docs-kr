@@ -8,7 +8,7 @@ description: 공식규칙 및 시작 전 가이드
 
 뉴머라이 시그널스는 전 세계 주식시장을 대상으로 한 경진대회입니다.
 
-대회에 참여하신분들은 주식거래의 기반이 되는 signal (시그널)을 작성한 뒤 제출하시면 뉴머라이는 모두의 시그널을 크라우드소싱을 이용해 메타모델을 작성해 헤지펀드의 운영에 사용되게 됩니다. 시그널스는 참가자들의 시그널이 얼마나 톡창적이고 우수한 시그널인지 비교할 수 있고 또 제출한 시그널의 성능의 따라 스테이킹 관계량에 비례한 NMR 토큰을 얻을 수 있습니다.
+대회에 참가자는 주식거래의 기반이 되는 signal (시그널)을 작성한 뒤 제출하면 뉴머라이는 모두의 시그널을 크라우드소싱을 이용해 메타모델을 작성해 헤지펀드의 운영에 사용되게 됩니다. 시그널스는 참가자의 시그널이 얼마나 톡창적이고 우수한 시그널인지 비교할 수 있고 또 제출한 시그널의 성능의 따라 스테이킹 관계량에 비례한 NMR 토큰을 얻을 수 있습니다.
 
 뉴머라이 시그널스는 뉴머라이 헤지펀드를 구축하기 위해 사용되며 뉴머라이의 master plan (마스터플랜)의 일부입니다. [Medium Post](https://medium.com/numerai/building-the-last-hedge-fund-introducing-numerai-signals-12de26dfa69c)나 아래의 영상에서 상세한 내용이 설명되어 있습니다.
 
@@ -16,9 +16,9 @@ description: 공식규칙 및 시작 전 가이드
 
 ## **개요**
 
-1. 뉴머라이 시그널스에 가입하거나 기존 뉴머라이 토너먼트 계정으로 가입하셔도 됩니다.
+1. 뉴머라이 시그널스에 등록하거나 기존 뉴머라이 토너먼트 계정으로 등록해도 됩니다.
 2. 대상이 된 주식시장에 대응한 시그널을 업로드 하면 과거의 성능, 리스크 등 수익성을 진단할 수 있습니다.
-3. 시행중인 라운드에 NMR을 스테이킹 하시면 시그널 제출 치의 성능 (`corr`과 `mmc`)에 근거해 NMR을 얻을 수 있습니다. 단 성능이 낮은 시그널에 대해서는 NMR을 잃을 수도 있습니다.
+3. 시행중인 라운드에 NMR을 스테이킹 하면 시그널 제출 치의 성능 (`corr`과 `mmc`)에 근거해 NMR을 얻을 수 있습니다. 단 성능이 낮은 시그널에 대해서는 NMR을 잃을 수도 있습니다.
 4. 뉴머라이의 API에 직접 접속하여 매주 시그널스에 에측파일 제출을 자동화할 수 있습니다.
 
 ## **주식시장의 시그널이란?**
@@ -34,7 +34,7 @@ description: 공식규칙 및 시작 전 가이드
 * [대안 데이터 시그널](https://en.wikipedia.org/wiki/Alternative\_data\_\(finance\)) ([신용카드 거래](https://secondmeasure.com), [위생이미지](https://www.theatlantic.com/magazine/archive/2019/05/stock-value-satellite-images-investing/586009/), [소셜미디어 감정](https://www.swaggystocks.com/dashboard/wallstreetbets/realtime))
 * [혼합 시그널](https://www.investopedia.com/terms/m/multifactor-model.asp) ([Barra risk factors](https://www.investopedia.com/terms/b/barra-risk-factor-analysis.asp#:\~:text=The%20Barra%20Risk%20Factor%20Analysis%20is%20a%20multi%2Dfactor%20model,turnover%20and%20senior%20debt%20rating.), [Fama French factors](https://www.investopedia.com/terms/f/famaandfrenchthreefactormodel.asp))
 
-이런 시그널들을 작성하기 위해 사용되는 기초데이터는 여러 성질을 가질 가능성이 높습니다. 예를 들면 주식회사의 연결재무제표와 그회사의 주차장의 이미지는 전혀 다른 데이터이지 미래의 주식 값을 예측하는 지표가 포함되어 있을지도 모릅니다. 뉴머라이가 참가자 데이터를 이용하기 위해서는 규격화가 필요합니다. 참가자는 티커와 시그널 데이터가 일대일로 대응할 수 있도록 목록을 작성해야 합니다.
+이런 시그널들을 작성하기 위해 사용되는 기초데이터는 여러 성질을 가질 가능성이 높습니다. 예를 들면 주식회사의 연결재무제표와 그회사의 주차장의 이미지는 전혀 다른 데이터이지만 미래의 주식 값을 예측하는 지표가 포함되어 있을지 모릅니다. 뉴머라이가 참가자 데이터를 이용하기 위해서는 규격화가 필요합니다. 참가자는 티커와 시그널 데이터가 일대일로 대응할 수 있도록 목록을 작성해야 합니다.
 
 ## **시그널 작성법**
 
@@ -43,12 +43,12 @@ description: 공식규칙 및 시작 전 가이드
 자체 시그널을 작성하기 위해서는 먼저 여러 주식시장의 데이터를 가져와야 합니다.
 
 {% hint style="info" %}
-주식시장의 데이터를 접하기 어려우시다면 [뉴머라이 토너먼트](../numerai-tournament/tournament-overview.md)에 참여해 주세요.
+주식시장의 데이터를 접하기 어려우다면 [뉴머라이 토너먼트](../numerai-tournament/tournament-overview.md)에 참여해 주세요.
 {% endhint %}
 
 아직 주식시장의 데이터에 접하지 못한 경우 [Yahoo Finance](https://finance.yahoo.com), [Quandl](https://www.quandl.com), [Koyfin](https://www.koyfin.com) 등 인터넷상에 무료 또는 저렴한 데이터 공급자가 다수 존재합니다.
 
-또한 [Quantopian](https://www.quantopian.com), [QuantConnect](https://www.quantconnect.com), [Alpaca](https://alpaca.markets)와 같은 시그널 데이터를 쉽게 만들 수 있는 플랫폼도 있습니다. 특히 [Risk Model](https://www.quantopian.com/risk-model)과 [AlphaLens Tearsheets](https://www.quantopian.com/tutorials/alphalens#lesson1)는 시그널의 품질을 분석하는데 가장 적합한 방법입니다. 저희 커뮤니티에서 사용되고 있는 인기 있는 데이터 소스, 플랫폼, 툴 리스트는 [이 게시판 thread](https://forum.numer.ai/t/free-or-cheap-data-for-erasure-numerai-quant/350)를 체크하시기 바랍니다.
+또한 [Quantopian](https://www.quantopian.com), [QuantConnect](https://www.quantconnect.com), [Alpaca](https://alpaca.markets)와 같은 시그널 데이터를 쉽게 만들 수 있는 플랫폼도 있습니다. 특히 [Risk Model](https://www.quantopian.com/risk-model)과 [AlphaLens Tearsheets](https://www.quantopian.com/tutorials/alphalens#lesson1)는 시그널의 품질을 분석하는데 가장 적합한 방법입니다. 저희 커뮤니티에서 사용되고 있는 인기 있는 데이터 소스, 플랫폼, 툴 리스트는 [이 게시판 thread](https://forum.numer.ai/t/free-or-cheap-data-for-erasure-numerai-quant/350)를 체크하기 바랍니다.
 
 {% hint style="success" %}
 독특하고 차별화된 데이터셋을 찾아 사용하는 것이 독창적인 시그널을 만들어내는 열쇠입니다.
