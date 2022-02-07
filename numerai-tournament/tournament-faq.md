@@ -24,7 +24,7 @@ MFA를 설정할 때는 복원 코드를 적어두고 안전한 장소에 저장
 
 아니요. NMR은 ERC-20 유틸리티 토큰입니다. [https://www.cryptoratingcouncil.com/asset-ratings](https://www.cryptoratingcouncil.com/asset-ratings)
 
-기관투자자 및 공인투자자만이 헤지펀드에 자금을 할당할 수 있습니다. 토너먼트 운영과 NMR은 헤지펀드와는 별개의 사업체입니다.
+기관투자자 및 공인투자자만이 헤지펀드에 투자할 수 있습니다. 토너먼트 운영과 NMR은 헤지펀드와는 별개의 사업체입니다.
 
 #### **왜 보수를 받기 위해 NMR을 스테이킹 해야 하나요?**
 
