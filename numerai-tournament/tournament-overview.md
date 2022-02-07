@@ -57,7 +57,7 @@ predictions = model.predict(tournament_data[feature_names])
 predictions.to_csv("predictions.csv")
 ```
 
-파이썬이 아니라도 참가자 개인이 선호하는 프로그래밍 언어를 자유롭게 사용 수 있습니다.
+파이썬이 아니라도 참가자 개인이 선호하는 프로그래밍 언어를 자유롭게 사용할 수 있습니다.
 
 ## 예측파일 제출
 
@@ -208,6 +208,6 @@ payout = at_risk_stake * payout_factor * (corr * corr_multiplier + mmc * mmc_mul
 
 ## 도움요청
 
-도움이 필요하신가요?
+도움이 필요한가요?
 
-질문과 피드백은 [RocketChat](https://community.numer.ai/home) (영어) 또는 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw)(한국어)에 올려 주시기 바랍니다!
+질문과 피드백은 [RocketChat](https://community.numer.ai/home) (영어) 또는 [Slack](https://join.slack.com/t/numerai-kr/shared\_invite/zt-1009d7ws3-hWRKdy8EkbSzwwzxaURlQw)(한국어)에 올려 주기 바랍니다!
