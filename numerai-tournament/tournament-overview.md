@@ -57,7 +57,7 @@ predictions = model.predict(tournament_data[feature_names])
 predictions.to_csv("predictions.csv")
 ```
 
-파이썬이 아니라도 참가자 개인이 선호하는 프로그래밍 언어를 자유롭게 사용할 수 있습니다.
+파이썬이 아니라도 참가자 개인이 선호하는 프로그래밍 언어를 자유롭게 사용 수 있습니다.
 
 ## 예측파일 제출
 
